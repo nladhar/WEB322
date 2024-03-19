@@ -1,11 +1,27 @@
-/*********************************************************************************
-*  WEB322 – Assignment 3
-*  I declare that this assignment is my own work in accordance with Seneca Academic Policy.  
-*  No part of this assignment has been copied manually or electronically from any other source
-*  (including web sites) or distributed to other students.
+/********************************************************************************
+
+* WEB322 – Assignment 03
+
 * 
-*  Name: Nehmat Ladhar Student ID: 137500229 Date: 19-03-2024
+
+* I declare that this assignment is my own work in accordance with Seneca's
+
+* Academic Integrity Policy:
+
+* 
+
+* https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+
+* 
+
+* Name: _Nehmat Ladhar___________________ Student ID: __137500229____________ Date: __19-03-2024____________
+
 *
+
+* Published URL: ____https://confused-bikini-boa.cyclic.app/_______________________________________________________
+
+*
+
 ********************************************************************************/
 const legoData = require("./modules/legoSets");
 legoData.initialize();
