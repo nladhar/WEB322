@@ -8,24 +8,20 @@
 *
 ********************************************************************************/
 const legoData = require("./modules/legoSets");
+legoData.initialize();
 const express = require("express");
 const app = express();
-const HTTP_PORT = process.env.PORT || 8080;
+const HTTP_PORT =  8080;
 
 app.use(express.static('public'));
 
-legoData.initialize().then(() => {
-    app.listen(HTTP_PORT, () => {
-      console.log(`server listening on: ${HTTP_PORT}`);
-    });
-  });
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname , '/views/home.html');
+    res.sendFile(__dirname + '/views/home.html');
   });
 
 app.get('/about', (req, res) => {
-    res.sendFile(__dirname + '/views/about.html');
+    res.sendFile(__dirname +'/views/about.html');
   });
 
 app.get("/lego/sets", async (req, res) => {
@@ -59,3 +55,7 @@ app.get("/lego/sets/:num", async (req, res) => {
 app.use((req, res, next) => {
     res.status(404).sendFile(path.join(__dirname, "/views/404.html"));
   });
+
+  app.listen(HTTP_PORT, () => {
+    console.log(`Server is listening http://localhost:${HTTP_PORT}`);
+  });
