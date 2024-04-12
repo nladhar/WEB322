@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lego Sets Collection</title>
-    <link href="/css/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css" >
 </head>
 
 <body>
@@ -33,11 +33,18 @@
                             </div>
                         </td>
                         <td>
-                            <%= set.name %> | <a href="/lego/sets?theme=<%= set.themeId %>" class="btn mt-2 btn-xs"><%= set.themeName %></a>
-                        </td>
-                        <td><span class="font-bold">Year:</span> <%= set.year %> - <span class="font-bold">Parts:</span> <%= set.part %></td>
+                            <div class="w-32 h-32 rounded-lg bg-transparent bg-no-repeat bg-cover">
+                            <img id="set-image" src="<%= set.img_url %>" alt="Lego Sets"></td>
+                        </div>
+
                         <td>
-                            <a href="/lego/sets/<%= set.id %>" class="btn btn-xs">details</a>
+                            <%= set.name %> | <a href="/lego/sets?theme=<%= set.themeId %>" class="btn mt-2 btn-xs"><%= set.theme_id %></a>
+                        </td>
+                        <td><span class="font-bold">Year:</span> <%= set.year %> - <span class="font-bold">Parts:</span> <%= set.num_parts %></td>
+                        <td>
+                            <!-- <a href="/lego/sets/<%= set.id %>" class="btn btn-xs">details</a> -->
+                            <a href="/lego/sets/<%= set.set_num %>" class="btn btn-xs">details</a>
+
                         </td>
                     </tr>
                 <% }); %>
